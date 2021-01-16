@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package Conection;
-
+import Conection.ConectionBd;
+import com.istLoja.controlador.Personabd;
+import com.istLoja.modelo.Persona;
 
 /**
  *
@@ -12,18 +14,36 @@ package Conection;
  */
 
 public class ConectionBd {
+    
+    
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Iniciando conexion .. ");
         
-        MetodoConect Conexion = new MetodoConect();
-        if(Conexion.ConexionBD()!= null){
-            System.out.println("  -- Conexion Exitosa -- ");
+        
+        Personabd personabd = new Personabd();
+        Persona persona = new Persona("1109871678","Maria","Molina","0981987876");
+        Persona personaeditar = new Persona("Cristopher","Aponte",3);
+        Persona personaeliminar = new Persona(4);
+         if (personabd.registrarPersona(persona)){
+            
+            System.out.println("-- Error al guardar --");
+            
         }else{
-            System.out.println("  ***** Fallo la conexion ******  ");
+            
+            System.out.println("---- Se guardó con éxito ----");
+        }
+        if(personabd.editarPersona(personaeditar)){
+            System.out.println("--- Error al editar ---");
+        }else{
+            System.out.println("--- Edicion exitosa ---");
+        }
+        if(personabd.eliminarPersona(personaeliminar)){
+            System.out.println("--- No se pudo eliminar ---");
+        }else{
+            System.out.println("--- Se eliminó con éxito ---");
         }
         
     }

@@ -3,21 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Conection;
+package com.istLoja.conexionbd;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 /**
- *
+ *jdbc:mysql://localhost:3306/mysqljdbc
  * @author Jorge Kng
  */
 public class MetodoConect {
     private static final String Nombrebd = "EjrBDConnection";
     private static final String Usuario = "root";
     private static final String Kontraseña= "Jkng19";
-    private  final String LineaBase = "jdbc:mysql://localhost:3306/"+Nombrebd+"?serverTimezone=UTC"; 
+    private  final String LineaBase = "jdbc:mysql://localhost:3306/"+Nombrebd; 
     private Connection connect = null;
+
+    public MetodoConect() {
+    }
    
     public Connection ConexionBD() {
         
@@ -26,7 +29,7 @@ public class MetodoConect {
         if(connect!= null){
             return connect;
         }
-        }catch (SQLException e){
+        }catch (Exception e){
             System.out.println("Error  : "+e.getMessage());
         }
      return null;   
