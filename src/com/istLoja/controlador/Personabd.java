@@ -8,7 +8,10 @@ import com.istLoja.modelo.Persona;
 import java.sql.Statement;
 import com.istLoja.conexionbd.MetodoConect;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author Jorge Kng
@@ -82,4 +85,36 @@ public class Personabd {
         }                      
 return false;
 }
+    public List<Persona> obtenerPersonas(){
+        Connection com = null;
+        Statement stm = null;
+        //Sentensia del konektor jdbs para obtener balores de la base de datos
+        ResultSet rs = null;
+        String sql = "SELECT * FROM ejrbdconnection.persona;";
+        
+        List<Persona> ListaPersona = new ArrayList<Persona>();
+        
+        try{
+            com = new MetodoConect().ConexionBD();
+            stm = com.createStatement();
+            rs = stm.executeQuery(sql);
+            
+            while(rs.next()){
+                Persona p = new Persona();
+                p.setIdPersona(rs.getInt(1));
+                p.setCédula(rs.getString(2));
+                p.setNombre(rs.getNString(3));
+                p.setApellido(rs.getNString(4));
+                p.setTeléfono(rs.getNString(5));
+                ListaPersona.add(p);
+            }
+            stm.close();
+            rs.close();
+            com.close();
+        }catch (Exception e){
+            System.out.println("Error: "+e.getMessage());
+            
+        }
+        return ListaPersona;
+    }
 }

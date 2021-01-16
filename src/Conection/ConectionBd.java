@@ -7,6 +7,8 @@ package Conection;
 import Conection.ConectionBd;
 import com.istLoja.controlador.Personabd;
 import com.istLoja.modelo.Persona;
+import com.istLoja.vistas.GestionPersonas;
+
 
 /**
  *
@@ -22,8 +24,10 @@ public class ConectionBd {
      */
     public static void main(String[] args) {
         
+        GestionPersonas gestionPersonas = new GestionPersonas();
         
-        Personabd personabd = new Personabd();
+        /*Personabd personabd = new Personabd();
+        System.out.println("Personas: "+personabd.obtenerPersonas());
         Persona persona = new Persona("1109871678","Maria","Molina","0981987876");
         Persona personaeditar = new Persona("Cristopher","Aponte",3);
         Persona personaeliminar = new Persona(4);
@@ -44,7 +48,7 @@ public class ConectionBd {
             System.out.println("--- No se pudo eliminar ---");
         }else{
             System.out.println("--- Se eliminó con éxito ---");
-        }
+        }*/
         
     }
 

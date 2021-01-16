@@ -18,6 +18,9 @@ public class Persona {
     private String Teléfono;
     private int idEditar;
     private int IdEliminar;
+
+    public Persona() {
+    }
     
 
     public Persona(String Cédula, String Nombre, String Apellido, String Teléfono) {
@@ -97,6 +100,12 @@ public class Persona {
     public void setTeléfono(String Teléfono) {
         this.Teléfono = Teléfono;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Persona{" + "idPersona=" + idPersona + ", C\u00e9dula=" + Cédula + ", Nombre=" + Nombre + ", Apellido=" + Apellido + ", Tel\u00e9fono=" + Teléfono + '}';
+    }
+
+ 
     
 }
