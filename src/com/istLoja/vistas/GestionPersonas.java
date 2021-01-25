@@ -63,7 +63,7 @@ public class GestionPersonas extends JFrame {
       
         panel1.add(boton);
         //Agregar el panel al JFrame
-        
+        this.add(panel);
         this.add(panel1);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

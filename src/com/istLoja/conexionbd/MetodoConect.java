@@ -16,7 +16,7 @@ public class MetodoConect {
     private static final String Nombrebd = "EjrBDConnection";
     private static final String Usuario = "root";
     private static final String Kontraseña= "Jkng19";
-    private  final String LineaBase = "jdbc:mysql://localhost:3306/"+Nombrebd; 
+    private   String LineaBase = "jdbc:mysql://localhost/"+Nombrebd+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"; 
     private Connection connect = null;
 
     public MetodoConect() {

@@ -16,6 +16,15 @@ public class Persona {
     private String Nombre;
     private String Apellido;
     private String Teléfono;
+    private String Correo;
+
+    public String getCorreo() {
+        return Correo;
+    }
+
+    public void setCorreo(String Correo) {
+        this.Correo = Correo;
+    }
     private int idEditar;
     private int IdEliminar;
 
@@ -103,8 +112,11 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" + "idPersona=" + idPersona + ", C\u00e9dula=" + Cédula + ", Nombre=" + Nombre + ", Apellido=" + Apellido + ", Tel\u00e9fono=" + Teléfono + '}';
+        return "Persona{" + "idPersona=" + idPersona + ", C\u00e9dula=" + Cédula + ", Nombre=" + Nombre + ", Apellido=" + Apellido + ", Tel\u00e9fono=" + Teléfono + ", Correo=" + Correo + '}';
     }
+
+    
+    
 
  
     
