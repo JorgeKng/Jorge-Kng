@@ -1,75 +1,41 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.istLoja.modelo;
+package com.istloja.modelo;
 
 /**
  *
- * @author Jorge Kng
+ * @author johnp
  */
 public class Persona {
     
     private int idPersona;
-    private String Cédula;
-    private String Nombre;
-    private String Apellido;
-    private String Teléfono;
-    private String Correo;
+    private String cedula;
+    private String nombre;
+    private String apellidos;
+    private String direccion;
+    private String correo;
+    private String telefono;
 
-    public String getCorreo() {
-        return Correo;
+    public Persona(int idPersona, String cedula, String nombre, String apellidos, String direccion, String correo, String telefono) {
+        this.idPersona = idPersona;
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.direccion = direccion;
+        this.correo = correo;
+        this.telefono = telefono;
     }
-
-    public void setCorreo(String Correo) {
-        this.Correo = Correo;
-    }
-    private int idEditar;
-    private int IdEliminar;
+    
+    
 
     public Persona() {
     }
-    
 
-    public Persona(String Cédula, String Nombre, String Apellido, String Teléfono) {
-        this.Cédula = Cédula;
-        this.Nombre = Nombre;
-        this.Apellido = Apellido;
-        this.Teléfono = Teléfono;
-    }
-
-    public Persona(String Nombre, String Apellido, int idEditar) {
-        this.Nombre = Nombre;
-        this.Apellido = Apellido;
-        this.idEditar = idEditar;
-    }
-
-   
-
-    public Persona(int IdEliminar) {
-        this.IdEliminar = IdEliminar;
-    }
-
-    public int getIdEditar() {
-        return idEditar;
-    }
-
-    public void setIdEditar(int idEditar) {
-        this.idEditar = idEditar;
-    }
-
-    public int getIdEliminar() {
-        return IdEliminar;
-    }
-
-    public void setIdEliminar(int IdEliminar) {
-        this.IdEliminar = IdEliminar;
+    public Persona(int idPersona) {
+        this.idPersona = idPersona;
     }
 
     
-
     
+
     public int getIdPersona() {
         return idPersona;
     }
@@ -78,46 +44,61 @@ public class Persona {
         this.idPersona = idPersona;
     }
 
-    public String getCédula() {
-        return Cédula;
+    public String getCedula() {
+        return cedula;
     }
 
-    public void setCédula(String Cédula) {
-        this.Cédula = Cédula;
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getApellido() {
-        return Apellido;
+    public String getApellidos() {
+        return apellidos;
     }
 
-    public void setApellido(String Apellido) {
-        this.Apellido = Apellido;
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
-    public String getTeléfono() {
-        return Teléfono;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setTeléfono(String Teléfono) {
-        this.Teléfono = Teléfono;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     @Override
     public String toString() {
-        return "Persona{" + "idPersona=" + idPersona + ", C\u00e9dula=" + Cédula + ", Nombre=" + Nombre + ", Apellido=" + Apellido + ", Tel\u00e9fono=" + Teléfono + ", Correo=" + Correo + '}';
+        return "Persona{" + "cedula=" + cedula + ", nombre=" + nombre + ", apellidos=" + apellidos + ", direccion=" + direccion + ", correo=" + correo + ", telefono=" + telefono + '}';
     }
 
     
     
-
- 
+    
     
 }
