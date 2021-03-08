@@ -18,6 +18,10 @@ import java.util.List;
  * @author johnp
  */
 public class Inventariodb {
+
+    public Inventariodb() {
+    }
+    
      // Registrar persona en la base de datos.
     public boolean registrarProducto(Inventario inventario) {
         boolean registrar = false;

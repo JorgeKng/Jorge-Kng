@@ -14,6 +14,10 @@ import java.util.List;
  * @author johnp
  */
 public class Personabd {
+
+    public Personabd() {
+    }
+    
     // Registrar persona en la base de datos.
     public boolean registrarPersona(Persona persona) {
         boolean registrar = false;

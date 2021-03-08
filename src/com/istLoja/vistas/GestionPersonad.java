@@ -9,7 +9,7 @@ import javax.swing.JTextField;
  *
  * @author johnp
  */
-public class GestionPersona{
+public class GestionPersonad{
      
     private JTextField txtCedula;
     private JTextField txtNombres;
@@ -20,7 +20,7 @@ public class GestionPersona{
     private Utilidades utilidades;
     private JFrame frameGestionContable;
 
-    public GestionPersona(JTextField txtCedula, JTextField txtNombres, JTextField txtApellidos, JTextField txtDireccion, JTextField txtCorreo, JTextField txtTelefono, Utilidades utilidades, JFrame frameGestionContable) {
+    public GestionPersonad(JTextField txtCedula, JTextField txtNombres, JTextField txtApellidos, JTextField txtDireccion, JTextField txtCorreo, JTextField txtTelefono, Utilidades utilidades, JFrame frameGestionContable) {
         this.txtCedula = txtCedula;
         this.txtNombres = txtNombres;
         this.txtApellidos = txtApellidos;
@@ -30,6 +30,11 @@ public class GestionPersona{
         this.utilidades = utilidades;
         this.frameGestionContable = frameGestionContable;
     }
+
+    public GestionPersonad() {
+    }
+
+    
 
     
 

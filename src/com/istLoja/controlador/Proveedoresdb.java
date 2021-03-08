@@ -13,6 +13,10 @@ import java.util.List;
  * @author johnp
  */
 public class Proveedoresdb {
+
+    public Proveedoresdb() {
+    }
+    
      // Registrar persona en la base de datos.
     public boolean registrarProveedor(Proveedores proveedor) {
         boolean registrar = false;

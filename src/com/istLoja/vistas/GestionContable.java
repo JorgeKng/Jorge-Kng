@@ -24,32 +24,33 @@ import com.istloja.utilidades.Utilidades;
  *
  * @author Jorge Kng
  */
-public class GestionContable extends javax.swing.JFrame  {
+public class GestionContable extends javax.swing.JFrame implements ComunicacionVistaModelosTablas  {
 
     private Utilidades utilidades;
     private  Personabd controladorPersona;
     private Persona personaEditarEliminar;
-    private GestionPersona gestionPersona;
-    //private ModelTablePersona modelTablePersona;
+    //private GestionPersona gestionPersona;
     private ModelTablePersonaV2 modelTablePersonaV2;
     private ModelTableProveedores modelTableProveedores;
     private ModelTableInventario modelTableInventario;
     private Proveedoresdb controladorProveedor;
     private Inventariodb controladorInventario;
     private Inventario inventarioSeleccionado;
+    private Gestion gestionPersona;
     
     public GestionContable() {
+        System.out.println("Entrò al konstruktor");
         controladorPersona = new Personabd();
         controladorProveedor = new Proveedoresdb();
         controladorInventario = new Inventariodb();
-        // modelTablePersona = new ModelTablePersona(controladorPersona.obtenerPersonas(),this);
         modelTablePersonaV2 = new ModelTablePersonaV2(controladorPersona.obtenerPersonas(), this);
         modelTableProveedores = new ModelTableProveedores(controladorProveedor.obtenerProveedores(), this);
         modelTableInventario = new ModelTableInventario(controladorInventario.obtenerProductosInventario(), this);
+        
         initComponents();
         utilidades = new Utilidades();
 
-        gestionPersona = new GestionPersona(txtCedula, txtNombres, txtApellidos, txtDireccion, txtCorreo, txtTelefono, utilidades, this);
+        gestionPersona = new Gestion(txtCedula, txtNombres, txtApellidos, txtDireccion, txtCorreo, txtTelefono, utilidades, this);
 
     }
 
@@ -740,7 +741,7 @@ public class GestionContable extends javax.swing.JFrame  {
             if (personaGuardar != null) {
                 if (controladorPersona.registrarPersona(personaGuardar)) {
                     JOptionPane.showMessageDialog(rootPane, "Persona registrada en el sistema.");
-                    gestionPersona.limpiarCamposPersona();
+                   gestionPersona.limpiarCamposPersona();
                 } else {
                     JOptionPane.showMessageDialog(rootPane, "No se puede guardar la persona", "ERROR", JOptionPane.ERROR_MESSAGE);
                 }
@@ -754,7 +755,7 @@ public class GestionContable extends javax.swing.JFrame  {
             JOptionPane.showMessageDialog(rootPane, "No hay una persona seleccionada para editar", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        Persona personaEditarLocal = gestionPersona.guardarEditar();
+       Persona personaEditarLocal = gestionPersona.guardarEditar();
         if (personaEditarLocal != null) {
             personaEditarLocal.setIdPersona(personaEditarEliminar.getIdPersona());
             if (controladorPersona.actualizar(personaEditarLocal)) {
