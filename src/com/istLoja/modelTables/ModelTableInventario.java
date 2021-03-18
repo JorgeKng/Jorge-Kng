@@ -11,7 +11,7 @@ import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author johnp
+ * @author jorgKng
  */
 public class ModelTableInventario extends AbstractTableModel {
 
@@ -44,10 +44,10 @@ public class ModelTableInventario extends AbstractTableModel {
                 return proveedor.getCodProducto();
             case 1:
                 return proveedor.getDescripcion();
-            case 2:
-                return proveedor.getPrecioCompra();
-            case 3:
-                return proveedor.getPrecioVenta();
+//            case 2:
+//                return proveedor.getPrecioCompra();
+//            case 3:
+//                return proveedor.getPrecioVenta();
             case 4:
                 return proveedor.getCanProductos();
         }
@@ -73,7 +73,4 @@ public class ModelTableInventario extends AbstractTableModel {
         this.inventarios = inventarios;
     }
 
-    
-
-  
 }

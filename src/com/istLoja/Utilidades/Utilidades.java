@@ -1,5 +1,8 @@
 package com.istloja.utilidades;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
 /**
  *
  * @author johnp
@@ -77,13 +80,20 @@ public class Utilidades {
         }
         return false;
     }
-     public boolean validarNumerosInventario(String numero){
+
+    //Metodo sirve para validar los numeros de cedula de las personas.
+    public boolean validarNumerosInventario(String numero) {
         try {
-            int validarNumero=Integer.parseInt(numero);
+            int validarNumero = Integer.parseInt(numero);
             return true;
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public String devolverFecha(Date fecha) {
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+        return f.format(fecha);
     }
 
 }
