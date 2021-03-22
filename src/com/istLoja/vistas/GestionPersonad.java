@@ -139,9 +139,9 @@ public class GestionPersonad {
         persona.setTelefono(txtTelefono.getText());
         persona.setGenero(jcbGenero.getSelectedIndex());
         if (isEditar) {
-            persona.setFechaActualizacion(new Date());
+           // persona.setFechaActualizacion();
         }else{
-            persona.getFechaRegistro(new Date());
+            //persona.getFechaRegistro(new Date());
         }
 
         return persona;
